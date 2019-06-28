@@ -1,86 +1,67 @@
-# Cascading Coffee Scripts
+### Keybase proof
 
-CCS is a simple CoffeeScript class that constructs Cascading Style
-Sheets from functions. The project is **not** currently ready for use.
+I hereby claim:
 
-To use CCS, you pass the constructor a function which defines the styles.
+  * I am macnaya on github.
+  * I am kickown (https://keybase.io/kickown) on keybase.
+  * I have a public key ASAny5mtDbsqe7pLJ3e-hFW9lQxmLyoBYSeORlgZTfE6cAo
 
-    styles = new CCS ->
+To claim this, I am signing this object:
 
-        # This is a user defined enclosure. @ is always the new
-        # CCS instance.
+```json
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012027cb99ad0dbb2a7bba4b2777be8455bd950c662f2a0161278e4658194df13a700a",
+      "host": "keybase.io",
+      "kid": "012027cb99ad0dbb2a7bba4b2777be8455bd950c662f2a0161278e4658194df13a700a",
+      "uid": "7adba3ff8729c6e0397309e134462b19",
+      "username": "kickown"
+    },
+    "merkle_root": {
+      "ctime": 1561730540,
+      "hash": "c78ba886466bc9313f6d2d9c4685e3688c3fcc1368ee90df71bca2d01b0bef478e797c51039edc52f0b0999f7c9e3d181551d5a0fc3595dbd3481d877263e04f",
+      "hash_meta": "58daf3a7ff98f0bd6dcb6887fc3d1e6301086b85f3ba25e92606055432554f92",
+      "seqno": 5656889
+    },
+    "service": {
+      "entropy": "GwJwsFRH9bEHVaVw9sTqTh2F",
+      "name": "github",
+      "username": "macnaya"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.1.0"
+  },
+  "ctime": 1561730575,
+  "expire_in": 504576000,
+  "prev": "fb8dad6841aa28e79c32a450d5b19a8dde2789733b0e8b496e4f034b889fb516",
+  "seqno": 6,
+  "tag": "signature"
+}
+```
 
-        red = "#FF0000"
-        bgColor = "#EEEEFF"
-        fonts = mono: "Ubuntu Mono", sans: "Comic Sans"
+with the key [ASAny5mtDbsqe7pLJ3e-hFW9lQxmLyoBYSeORlgZTfE6cAo](https://keybase.io/kickown), yielding the signature:
 
-        # You can define brushes using @brush as a setter.
+```
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJ8uZrQ27Knu6Syd3voRVvZUMZi8qAWEnjkZYGU3xOnAKp3BheWxvYWTESpcCBsQg+42taEGqKOecMqRQ1bGajd4niXM7DotJbk8DS4iftRbEIPDk7EzAt107yBfi5xcRa7DlwhiVcxhgK0eF2CvMbt1OAgHCo3NpZ8RAQWVrQjTuyRXdInTzLQO7dsoTmUKT34UJkjiW68zB9bCoB54HED3kaxPymai7cx9j1wM5Tsefe1dy5W55REdnAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMv2vqpJXDJeQ/3plIkd/253uYq39SS3iEbUbq7+nLUZo3RhZ80CAqd2ZXJzaW9uAQ==
 
-        @brush "sansPink", ->
-            @font "sans"
-            @color "pink"
+```
 
-        # You can extend and overload the methods of the new CCS instance.
+And finally, I am proving ownership of the github account by posting this as a gist.
 
-        @foo = (bottom) ->
-            @font fonts.sans
-            @setPosition "fixed", 0, 0, bottom, 25
+### My publicly-auditable identity:
 
-        # Once the scope and context are set up, the stylesheet is defined.
+https://keybase.io/kickown
 
-        @selector ".fooClass", ->
-            @font fonts.mono
-            @bgColor bgColor
-            @lineHeight @em 0.5
-            @selector ".fooChildClass", ->
-                @brush "sansPink"
-                @size 12
-        @selector ".spamClass", ->
-            @color red
-            @foo 105
+### From the command line:
 
-If you ran that code, then `styles.tree` would evaluate to...
+Consider the [keybase command line program](https://keybase.io/download).
 
-    {
-        ".fooClass": {
-            "font": "Ubuntu Mono",
-            "background-color": "#EEEEFF",
-            "line-height": "0.5em",
-            ".fooChildClass": {
-                "font": "sans",
-                "color": "pink",
-                "font-size": "12px"
-            }
-        },
-        ".spamClass": {
-            "color": "#FF0000",
-            "font": "Comic Sans",
-            "position": "fixed",
-            "top": "0",
-            "right": "0",
-            "bottom": "105px",
-            "left": "25px"
-        }
-    }
-
-...and `styles.css` would evaluate to...
-
-    .fooClass {
-    font: Ubuntu Mono;
-    background-color: #EEEEFF;
-    line-height: 0.5em;
-    .fooChildClass {
-    font: sans;
-    color: pink;
-    font-size: 12px;
-    }
-    }
-    .spamClass {
-    color: #FF0000;
-    font: Comic Sans;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 105px;
-    left: 25px;
-    }
+```bash
+# look me up
+keybase id kickown
+```
